@@ -7,12 +7,26 @@
     
 
 <script type="text/javascript">
-        setTimeout('read',3000);
-    function read(){
-    jQuery.get("/module4\mod4\megs1.txt",function(data){
-    document.write(data);});
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest){
+  xmlhttp=new XMLHttpRequest();
+}else{
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("myDiv").innerHTML= xmlhttp.responseText; 
     }
+  }
+xmlhttp.open("GET","megs1.txt",true);
+xmlhttp.send();
+}
 </script>
+
 </head>
 <body>
 </body>
