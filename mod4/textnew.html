@@ -5,12 +5,12 @@
   <title>HART SENSORS</title>
   <h1>HART SENSORS</h1>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src= "js/bootstrap.min.js"></script>   
+  
 <script src = "js/file.js"></script>
 <script type="text/javascript">
         setTimeout('read',3000);
     function read(){
-    setTimeout(jQuery.get("/module4\mod4\megs1.txt",function(data){
+    setTimeout(jQuery.get("/module4\mod4\megs1.txt",function(data)){
      document.write(data);
  });
     }
