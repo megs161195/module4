@@ -1,11 +1,16 @@
- $(document).ready(function() {
-    $("#lesen").click(function() {
+var pageExecute = {
+
+    fileContents:"Null",
+    pagePrefix:"Null",
+    slides:"Null",
+
+    init: function () {
         $.ajax({
-            url : "megs.txt",
-            dataType: "text",
-            success : function (data) {
-                $(".text").html(data);
+            url: "C:\Users\15-N225 TU/megs.txt",
+            async: false,
+            success: function (data){
+                pageExecute.fileContents = data;
             }
         });
-    });
-}); 
+    }
+};
