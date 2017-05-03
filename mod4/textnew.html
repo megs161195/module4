@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HART SENSORS</title>
+  <h1>HART SENSORS</h1></head>
+  <body>
+ <script type="text/javascript">
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest){
+  xmlhttp=new XMLHttpRequest();
+}else{
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("myDiv").innerHTML= xmlhttp.responseText; 
+    }
+  }
+xmlhttp.open("GET","megs1.txt",true);
+xmlhttp.send();
+}
+</script>
+
+<div id="myDiv">Let AJAX change this text</div>
+<button type="button" onclick="loadXMLDoc()">Change Content</button>
+</body>
+</html>
