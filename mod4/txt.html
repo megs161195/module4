@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HART SENSORS</title>
+    <h1>HART SENSORS</h1>
+
+<script type="text/javascript">
+        setTimeout('read',3000);
+    function read(){
+    jQuery.get('megs1.txt',function(data){
+    document.write(data);}),1000);
+    }
+</script>
