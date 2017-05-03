@@ -1,16 +1,18 @@
-var pageExecute = {
-
-    fileContents:"Null",
-    pagePrefix:"Null",
-    slides:"Null",
-
-    init: function () {
-        $.ajax({
-            url: "C:\Users\15-N225 TU/megs.txt",
-            async: false,
-            success: function (data){
-                pageExecute.fileContents = data;
-            }
-        });
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest){
+  xmlhttp=new XMLHttpRequest();
+}else{
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("myDiv").innerHTML= xmlhttp.responseText; 
     }
-};
+  }
+xmlhttp.open("GET","megs1.txt",true);
+xmlhttp.send();
+}
