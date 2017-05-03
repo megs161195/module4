@@ -1,11 +1,11 @@
-   var txtFile = new XMLHttpRequest();
-txtFile.open("GET", "file://C:Users/15-N225 TU/megs.text", true);
-txtFile.onreadystatechange = function() {
-  if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
-    if (txtFile.status === 200) {  // Makes sure it's found the file.
-      allText = txtFile.responseText; 
-      lines = txtFile.responseText.split("\n"); // Will separate each line into an array
-    }
-  }
-}
-txtFile.send(null);
+ $(document).ready(function() {
+    $("#lesen").click(function() {
+        $.ajax({
+            url : "megs.txt",
+            dataType: "text",
+            success : function (data) {
+                $(".text").html(data);
+            }
+        });
+    });
+}); 
