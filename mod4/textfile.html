@@ -1,33 +1,16 @@
 <!DOCTYPE html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
         <script type="text/javascript">
-        function refresh()
-        {
-                var req = new XMLHttpRequest();
-                console.log("Grabbing Value");
-                req.onreadystatechange=function() {
-                    if (req.readyState==4 && req.status==200) {
-                        document.getElementById('trulyCodesFavouriteNumber').innerText = req.responseText;
-                    }
-                }
-                req.open("GET", 'megs.txt', true);
-                req.send(null);
-        }
-        function init()
-        {
-            refresh()
-            var int=self.setInterval(function(){refresh()},10000);
-        }
-        </script>
-    </head>
-<body onload="init()">
-    <div id="main">
-        <div id="updateMe">
-            <h2>Truly Code's Favourite Number is:</h2>
-            <h1 id="trulyCodesFavouriteNumber"></h1>
-        </div>
-    </div>
+        setTimeout('read',3000);
+    function read(){
+    setTimeout(jQuery.get('megs.txt',function(data){
+    document.write(data);}));
+    }
+</script>
+</head>
+<body>
+<h1>HART</h1>
+        
 </body>
 </html>
 
