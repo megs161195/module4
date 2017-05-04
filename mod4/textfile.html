@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>HART SENSORS</title>
-    <h1>HART SENSORS</h1>
- <iframe src="/module4\mod4\megs1.txt" width="100%">
-</iframe>
-
-</head>
-<body>
-
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+        <script type="text/javascript">
+        function refresh()
+        {
+                var req = new XMLHttpRequest();
+                console.log("Grabbing Value");
+                req.onreadystatechange=function() {
+                    if (req.readyState==4 && req.status==200) {
+                        document.getElementById('trulyCodesFavouriteNumber').innerText = req.responseText;
+                    }
+                }
+                req.open("GET", 'megs.txt', true);
+                req.send(null);
+        }
+        function init()
+        {
+            refresh()
+            var int=self.setInterval(function(){refresh()},10000);
+        }
+        </script>
+    </head>
+<body onload="init()">
+    <div id="main">
+        <div id="updateMe">
+            <h2>Truly Code's Favourite Number is:</h2>
+            <h1 id="trulyCodesFavouriteNumber"></h1>
+        </div>
+    </div>
 </body>
 </html>
 
